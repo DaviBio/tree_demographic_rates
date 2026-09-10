@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1364745983.svg)](https://doi.org/10.5281/zenodo.22696036)
 # Demographic rates of tree species in subtropical forests vary across ontogenetic stages regardless of their biogeographical origin and leaf habit: Morales et al. (2026) at Austral Ecology.
 
 This repository contains the data and R code used to analyze demographic
@@ -130,7 +131,7 @@ remotes::install_github("jinyizju/V.PhyloMaker2")
 ## Citation
 
 If you use this data or code, please cite the associated publication
-[add citation once available].
+[DOI: 10.5281/zenodo.22696037].
 
 ## Contact
 
