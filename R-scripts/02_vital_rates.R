@@ -32,7 +32,7 @@ species_juvenile <- read.csv("processed-data/juvenile_species_level.csv")
 adult_dynamics <- species_adult %>%
   mutate(N1 = Nm + Ns) %>%
   mutate(N2 = Ns + Nr) %>%
-  select(Species, N1, Ns, N2) %>%
+  dplyr::select(Species, N1, Ns, N2) %>%
   mutate(t = census_interval) %>%
   mutate(Raf = 1 - (Ns / N2)^(1 / t)) %>%
   mutate(Ma = 1 - (Ns / N1)^(1 / t)) %>%
@@ -51,7 +51,7 @@ write.csv(percentual_adult, "vital-rates/adult_dynamics.csv")
 juvenile_dynamics <- species_juvenile %>%
   mutate(N1 = Nm + Ns) %>%
   mutate(N2 = Ns + Nr) %>%
-  select(Species, N1, Ns, N2) %>%
+  dplyr::select(Species, N1, Ns, N2) %>%
   mutate(t = census_interval) %>%
   mutate(Raf = 1 - (Ns / N2)^(1 / t)) %>%
   mutate(Ma = 1 - (Ns / N1)^(1 / t)) %>%
@@ -75,7 +75,7 @@ combined_dynamics <- combined %>%
   mutate(Ns = Ns.x + Ns.y) %>%
   mutate(N2 = N2.x + N2.y) %>%
   rename(t = t.x) %>%
-  select(Species, N1, Ns, N2, t) %>%
+  dplyr::select(Species, N1, Ns, N2, t) %>%
   mutate(Raf = 1 - (Ns / N2)^(1 / t)) %>%
   mutate(Ma = 1 - (Ns / N1)^(1 / t)) %>%
   mutate(turnover = (Ma + Raf) / 2) %>%
